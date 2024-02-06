@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <style>
+        body {
+            background-color: #f2f2f2; /* Grey background color */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background color */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+        textarea {
+            width: 100%;
+            min-height: 200px; /* Increased height for input area */
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9; /* Light grey background color */
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        .btn-primary {
+            background-color: #4CAF50; /* Green button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        .btn-primary:hover {
+            background-color: #45a049; /* Darker green color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Text Summarizer</h1>
+        <form method="post" action="{{ url_for('summarize') }}" class="mb-4">
+            <div class="form-group">
+                <label for="text">Enter Text:</label>
+                <textarea class="form-control" id="text" name="text" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Summarize</button>
+        </form>
+    </div>
+</body>
+</html>
